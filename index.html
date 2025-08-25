@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marchzins</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 id="title">Marchzins Calculator</h1>
+    </header>
+
+    <section>
+        <form id="marchzins-form">
+            <label for="capital">Startkapital:</label>
+            <input type="number" id="capital" step="100" required>
+
+            <label for="interest-rate">Zinssatz (%):</label>
+            <input type="number" id="interest-rate" step="0.1" required>
+
+            <label for="birthday">Geburtstag:</label>
+            <input type="date" id="birthday" required>
+
+            <button type="submit">Berechnen</button>
+        </form>
+
+        <div id="result"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

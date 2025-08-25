@@ -1,0 +1,17 @@
+section {
+    max-width: 600px;
+    margin: 0px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+#marchzins-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+#title{
+    font-size: 50px;
+    text-align: center;
+}
