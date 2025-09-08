@@ -10,6 +10,11 @@ document.getElementById("marchzins-form").addEventListener("submit", function (e
   const daysWithBonus = birthday.getDate();
   const bonusRate = interestRate + 1;
   const bonusInterest = capital * (bonusRate / 100) * (daysWithBonus / 360);
+  
+  // Tax calculation with 35% tax rate
+  const taxRate = 35;
+  const taxAmount = bonusInterest * (taxRate / 100);
+  const netInterest = bonusInterest - taxAmount;
 
   resultDiv.innerHTML = `
             <div class="calculation-steps">
@@ -29,12 +34,17 @@ document.getElementById("marchzins-form").addEventListener("submit", function (e
                     ${interestRate}% + 1% = ${bonusRate}%
                 </div>
                 <div class="step">
-                    <strong>4. Calculation:</strong><br>
+                    <strong>4. Gross Interest Calculation:</strong><br>
                     ${capital.toLocaleString('en-US')} CHF × ${bonusRate}% × (${daysWithBonus} days ÷ 360 days) = ${bonusInterest.toFixed(2)} CHF
+                </div>
+                <div class="step">
+                    <strong>5. Tax Calculation (${taxRate}% Tax Rate):</strong><br>
+                    Tax: ${bonusInterest.toFixed(2)} CHF × ${taxRate}% = ${taxAmount.toFixed(2)} CHF
                 </div>
                 <div class="step" style="background-color: #e8f5e8; border-left-color: #28a745;">
                     <strong>Result:</strong><br>
-                    <strong>March Interest Bonus: ${bonusInterest.toFixed(2)} CHF</strong>
+                    <strong>Gross Interest: ${bonusInterest.toFixed(2)} CHF</strong><br>
+                    <strong>Net Interest: ${bonusInterest.toFixed(2)} CHF - ${taxAmount.toFixed(2)} CHF = ${netInterest.toFixed(2)} CHF</strong>
                 </div>
             </div>
         `;
